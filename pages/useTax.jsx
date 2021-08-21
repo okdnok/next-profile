@@ -22,4 +22,28 @@ function AlertMessage(props) {
         let p = e.target.value
         setPrice(p)
     }
+
+    return <div className="alert alert-primary h5">
+        <p className="h5">通常税率：{tax()}円.</p>
+        <p className="h5">軽減税率：{reduced()}円.</p>
+        <div className="form-group">
+            <label className="form-group-label">Price:</label>
+            <input type="number" className="form-control"
+                onChange={DoChange} value={price} />
+        </div>
+    </div>
 }
+
+function App(){
+    return(
+        <div>
+            <h1 className="bg-primary text-white display-4">React</h1>
+            <div className="container">
+                <h4 className="my-3">Hooks sample</h4>
+                <AlertMessage />
+            </div>
+        </div>
+    )
+}
+
+export default App
